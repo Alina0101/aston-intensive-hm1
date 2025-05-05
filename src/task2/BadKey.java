@@ -14,7 +14,7 @@ public class BadKey {
 
     @Override
     public boolean equals(Object obj) {
-        return false; // Объекты никогда не равны
+        return false; // Объекты никогда не равны, даже себе
     }
 
     @Override

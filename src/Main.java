@@ -1,5 +1,12 @@
+import task1.MyArrayList;
+import task2.BadKey;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
+        System.out.println("---------- Task1 ----------");
         // Пример 1: работа со строками
         System.out.println("=== Пример со строками ===");
         MyArrayList<String> stringList = new MyArrayList<>();
@@ -48,5 +55,26 @@ public class Main {
         }
 
         System.out.println("\nРазмер списка: " + intList.size());
+        System.out.println();
+
+        System.out.println("---------- Task2 ----------");
+        Map<BadKey, String> map = new HashMap<>();
+        int threshold = 20;
+        for (int i = 1; i <= threshold; i++) {
+            map.put(new BadKey(i), "Value " + i);
+
+            System.out.println("Iteration " + i);
+            System.out.println("Map size: " + map.size());
+
+            if (i < 8) {
+                System.out.println("Bucket type: Node (linked list)");
+            } else if (i == 8) {
+                System.out.println("Bucket transformed to: TreeNode");
+            } else {
+                System.out.println("Bucket type: TreeNode");
+            }
+
+            System.out.println("---------------------------------");
+        }
     }
 }
